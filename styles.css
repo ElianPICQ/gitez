@@ -1,16 +1,8 @@
 @charset "UTF-8";
 /* Gîte - Sass */
 @font-face {
-  font-family: "Lato";
-  src: url(fonts/Lato-Regular.ttf);
-}
-@font-face {
   font-family: "Lato-light";
   src: url(fonts/Lato-Light.ttf);
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url(fonts/Montserrat-Regular.ttf);
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -166,6 +158,7 @@ main section {
 }
 
 #slider {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   background-image: url(imgs/maison-contemporaine_onyx-version-nuit.jpg);
