@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+	<meta charset="utf-8" />
+	<title>Gîte</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit-cover" />
+
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" href="css/all.css" />
+</head>
+<body>
+	<div id="page-container">
+		<header>
+			<nav>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="acceuil" checked/>
+						<span><i class="fa-solid fa-house"></i><h2>Acceuil</h2></span>
+					</label>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="reserver" />
+						<span><i class="fa-solid fa-basket-shopping"></i><h2>Réserver</h2></span>
+					</label>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="photos" />
+						<span><i class="fa-solid fa-image"></i><h2>Photos</h2></span>
+					</label>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="tarifs" />
+						<span><i class="fa-solid fa-money-bill-wave"></i><h2>Tarifs</h2></span>
+					</label>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="localisation" />
+						<span><i class="fa-solid fa-location-dot"></i><h2>Localisation</h2></span>
+					</label>
+					<label>
+						<input type="radio" id="" name="navBar-item" value="activites" />
+						<span><i class="fa-solid fa-volleyball"></i><h2>Activités</h2></span>
+					</label>
+			</nav>
+		</header>
+
+		<main>
+			<section id="page-acceuil" class="content-page">
+				<h2>>- Nom du gîte -</h2>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit ullamcorper vestibulum. Vestibulum porta suscipit hendrerit. Proin augue erat, laoreet eget congue sit amet, ornare vel velit. Integer et ex a arcu pellentesque luctus.<br />
+				Phasellus ornare nisi sed posuere porta. Maecenas pulvinar bibendum ligula, eu sodales urna ultrices quis. Duis in lorem dui. Sed finibus libero turpis, id lobortis mauris placerat at. </p>
+			</section>
+			<section id="page-reserver" class="content-page">
+				<h2>>- Reservations -</h2>
+				
+			</section>
+			<section id="page-photos" class="content-page">
+				<h2>>- Photos -</h2>
+				
+				<div id="caroussel3-container">
+					<div id="caroussel3">
+						<!-- Conteneur de l'image -->
+						<div id="slider"></div>
+						<!-- Flèches précédent & suivant -->
+						<div id="precedent" onclick="ep_changeSlide(-1)">&#10094;</div>
+						<div id="suivant" onclick="ep_changeSlide(1)">&#10095;</div>
+					</div>
+
+					<!-- Icones défilantes -->
+					<div id="caroussel3-selector">
+						<div id="caroussel3-selector__container">
+							<div class="img-selector img-focus" onclick="ep_moveSlide(0)"><div class="darkFilterImg" style="opacity: 0;"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(1)"><div class="darkFilterImg"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(2)"><div class="darkFilterImg"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(3)"><div class="darkFilterImg"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(4)"><div class="darkFilterImg"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(5)"><div class="darkFilterImg"></div></div>
+							<div class="img-selector" onclick="ep_moveSlide(6)"><div class="darkFilterImg"></div></div>
+						</div>
+					</div>
+
+				<!-- Image Modal -->
+
+				<div id="myModal">
+					<div id="modal-container" onClick="ep_closeModal()">
+						<span id="close" onClick="ep_closeModal()">&times;</span>
+						<img src="" class="modal-content" id="img01" />
+						<div id="caption"></div>
+					</div>
+				</div>
+
+			</div>
+
+			</section>
+			<section id="page-tarifs" class="content-page">
+				<h2>>- Tarifs -</h2>
+				
+			</section>
+			<section id="page-localisation" class="content-page">
+				<h2>>- Localisation -</h2>
+				<div id="gglemaps-container">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2626.7511720636944!2d2.4061363155310147!3d48.8248089110249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67257f5bf695d%3A0x9696a664fc191287!2s127%20Rue%20de%20Paris%2C%2094220%20Charenton-le-Pont!5e0!3m2!1sfr!2sfr!4v1652030264180!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+					<div id="gglemaps-dark-filter"></div>
+				</div>
+				
+			</section>
+			<section id="page-activites" class="content-page">
+				<h2>>- Activités -</h2>
+				
+			</section>
+		</main>
+	</div>
+	<script src="gite.js"></script>
+</body>
+</html>
