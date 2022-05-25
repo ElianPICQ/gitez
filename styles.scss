@@ -1,0 +1,392 @@
+/* Gîte - Sass */
+
+@font-face {
+	font-family: "Lato-light";
+	src: url(fonts/Lato-Light.ttf);
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 18px;
+}
+
+
+#page-container {
+	width: 100vw; height: 100vh;
+	display: flex;
+}
+
+/* HEADER */
+
+header {
+	height: 100%; width: 15%; max-width: 15%;
+	background-color: #262626;
+	color: #737373;
+}
+
+nav {
+	height: 75vh; width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	margin-top: 4rem;
+	font-family: "Lato-light", sans-serif;
+
+	label {
+		width: 99%; height: inherit;
+
+		position: relative;
+		display: inline-block;
+
+		span {
+			position: absolute;
+			top: 0; bottom: 0; left: 0; right: 0;
+			display: flex;
+			align-items: center;
+
+			cursor: pointer;
+			font-size: 1em;
+			padding-left: 15%;
+
+			background-color: #262626;
+			border-top: 1px solid black;
+			box-shadow: 0 0 2px 1px #000;
+
+			i {
+				margin-right: 15px;
+			}
+		}
+
+		input {
+			opacity: 0;
+			width: 0; height: 0;
+
+			&:checked + span {
+				color: #fff;
+				box-shadow: inset 0 0 2px 1px #bdbdbd;
+				background-color: #5e5e5e;
+
+				h2 {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
+
+/* MAIN */
+
+/* displays pour afficher/cacher les panneaux */
+
+
+#page-reserver {
+	display: none;
+}
+
+#page-tarifs {
+	display: none;
+
+}
+
+
+
+#page-activites {
+	display: none;
+
+}
+
+/* Main du coup */
+
+main {
+	width: 85%; height: 100%;
+
+	section {
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* SECTION - Page d'Acceuil */
+
+
+#page-acceuil {
+	justify-content: space-evenly;
+
+	background-image: url(imgs/maison-contemporaine_onyx-version-nuit.jpg);
+	background-size: cover;
+
+	color: #fff;
+
+	h2 {
+		background-color: #000000a8;
+		padding: 8px;
+		font-size: 2.5em;
+	}
+	p {
+		width: 50%;
+		text-align: center;
+		background-color: #000000a8;
+		padding: 10px;
+		font-size: 1.1em;
+	}
+}
+
+
+/* SECTION - Photos */
+
+#page-photos {
+	display: none;
+	justify-content: space-between;
+
+	background-color: #3d3f5e;
+	color: #d9d8d8;
+
+	h2 {
+			background-color: #000000a8;
+			padding: 8px;
+			margin-top: 1em;
+			font-size: 2.5em;
+	}
+}
+
+/* CAROUSSEL D'IMAGES */
+
+#caroussel3-container {
+	width: 65%;
+	height: 75%;
+	margin-bottom: 1em;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#caroussel3 {
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	width: 100%; height: 100%;
+}
+
+#slider {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+
+	background-image: url(imgs/maison-contemporaine_onyx-version-nuit.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+#precedent, #suivant {
+	cursor: pointer;
+	transition: opacity .3s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 2.5rem;
+	padding: 10px;
+}
+
+#precedent { left: 0; display: none;}
+#suivant { right: 0; }
+
+#caroussel3:hover #precedent, #caroussel3:hover #suivant {
+	opacity: 1;
+}
+
+#precedent:hover {
+	background-color: rgba(0, 0, 0, .7);
+}
+#suivant:hover {
+	background-color: rgba(0, 0, 0, .7);
+}
+
+#caroussel3-selector {
+	width: 100%; height: 100px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+#caroussel3-selector__container {
+	height: 100%;
+	width: 80%;
+	display: flex; align-items: center;
+	margin-left: 40%;
+	transition: all .7s;
+}
+
+.img-selector {
+	width: 50px;
+	min-width: 50px;
+	height: 50px;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+	margin-right: 15px;
+
+	transform: scale(1.0);
+	transition: transform .7s ease-in-out;
+}
+
+.darkFilterImg {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background-color: rgba(0, 0, 0, .6);
+	opacity: 1;
+	transition: opacity .7s ease-in-out;
+}
+
+.img-focus {
+	transform: scale(1.4);
+	transition: transform .7s ease-in-out;
+}
+
+.img-selector:nth-child(1) {
+	background-image: url(imgs/maison-contemporaine_onyx-version-nuit.jpg);
+}
+.img-selector:nth-child(2) {
+	background-image: url(imgs/maison-toiture-plate-2-maison-laure-OPTI.jpg);
+}
+.img-selector:nth-child(3) {
+	background-image: url(imgs/amenagement-interieur-conseils-et-solutions-00.jpg);
+}
+.img-selector:nth-child(4) {
+	background-image: url(imgs/Architecte-intérieur-nice-cannes-saint-raphael-decoration-design-mobilier+sur-mesure-haut+de+gamme.jpg);
+}
+.img-selector:nth-child(5) {
+	background-image: url(imgs/comment-amenager-l-interieur-de-sa-maison-en-bois.jpg);
+}
+.img-selector:nth-child(6) {
+	background-image: url(imgs/decoration-interieure.jpg);
+}
+.img-selector:nth-child(7) {
+	background-image: url(imgs/pexels-photo-7061421-1140x500.jpeg);
+}
+
+/* Image modal */
+
+#myModal {
+	display: none;
+	position: fixed;
+	left: 0; top: 0;
+	z-index: 20;
+	width: 100%; height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, .9);
+}
+
+#modal-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+}
+
+.modal-content {
+	max-width: 700px;
+}
+
+#caption {
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+}
+
+/* Animation pour l'afficher */
+
+.modal-content, #caption {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+}
+
+/* Close button */
+
+#close {
+	position: absolute;
+	top: 15px; right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+#close:hover,
+#close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+/* SECTION - Localisation */
+
+#page-localisation {
+	display: none;
+
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #3e3e3e;
+
+	#gglemaps-container {
+		position: relative;
+		margin: auto 10% auto auto;
+
+		iframe {
+			border-radius: 5px;
+		}
+
+		#gglemaps-dark-filter {
+			position: absolute;
+			top: 0; right: 0; bottom: 0; left: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			border-radius: 5px;
+
+			pointer-events: none;
+		}
+	}
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1500px)
+{
+	header {
+		font-size: .8rem;
+	}
+}
